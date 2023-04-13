@@ -11,37 +11,50 @@ datasource db {
 }
 
 model Remetente {
-  id        Int    @id @default(autoincrement())
-  idProduto Produto[]
-  nome      String
-  CPF       String @unique
-  numero    String
-  bairro    String
-  cidade    String
-  estado    String
-  CEP       String
+  id            Int    @id @default(autoincrement())
+  id_objeto     Objeto[]
+  str_nome      String @db.VarChar(70)
+  str_telefone  String @db.VarChar(20)
+  str_CPF       String @unique @db.Char(11)
+  str_estado    String @db.VarChar(20)
+  str_cidade    String @db.VarChar(30)
+  str_bairro    String @db.VarChar(40)
+  str_numero    String @db.VarChar(6)
+  str_CEP       String @db.Char(8)
 }
 
 model Destinatario {
-  id        Int    @id @default(autoincrement())
-  idProduto Produto[]
-  nome      String
-  CPF       String @unique
-  numero    String
-  bairro    String
-  cidade    String
-  estado    String
-  CEP       String
+  id            Int    @id @default(autoincrement())
+  id_objeto     Objeto[]
+  str_nome      String @db.VarChar(70)
+  str_telefone  String @db.VarChar(20)
+  str_CPF       String @unique @db.Char(11)
+  str_estado    String @db.VarChar(20)
+  str_cidade    String @db.VarChar(30)
+  str_bairro    String @db.VarChar(40)
+  str_numero    String @db.VarChar(6)
+  str_CEP       String @db.Char(8)
 }
 
-model Produto {
-  id              Int    @id @default(autoincrement())
-  nome            String
-  status          String
-  cadastro        DateTime @default(now())
-  entrega         DateTime @default(now())
-  remetente       Remetente @relation(fields: [idRemetente], references: [id])
-  idRemetente     Int
-  destinatario    Destinatario @relation(fields: [idDestinatario], references: [id])
-  idDestinatario  Int
+model Objeto {
+  id                  Int    @id @default(autoincrement())
+  str_peso            String @db.VarChar(10)
+  str_dimensoes       String @db.VarChar(10)
+  str_tipoServico     String @db.VarChar(20)
+  str_codRastreio     String @db.VarChar(20)
+  str_remetente       Remetente @relation(fields: [id_remetente], references: [id])
+  id_remetente        Int
+  str_destinatario    Destinatario @relation(fields: [id_destinatario], references: [id])
+  id_destinatario     Int
+  str_objlog          ObjetoLog @relation(fields: [id_objLog], references: [id])
+  id_objLog           Int
+
+}
+
+model ObjetoLog {
+  id            Int    @id @default(autoincrement())
+  id_objeto     Objeto[]
+  str_status    String @db.VarChar(50)
+  dt_registro   DateTime @default(now())
+  str_descricao String @db.Text
 }
