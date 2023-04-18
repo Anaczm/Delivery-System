@@ -1,14 +1,14 @@
-import { Controller, Post }   from '@nestjs/common';
+import { Body, Controller, Post }   from '@nestjs/common';
 import { RemetenteService } from './remetente.service';
-import { Remetente as RemetenteModel } from '@prisma/client';
+import { RemetenteDto } from './dto';
 
 @Controller()
 export class RemetenteController {
     constructor( private remetenteService: RemetenteService) {}
 
     @Post('cadastro')
-    cadastro() {
-        return 'Remetente cadastrado'
+    cadastro(@Body() dto: RemetenteDto) {
+        return this.remetenteService.cadastro()
     }
-}  
+} 
 
