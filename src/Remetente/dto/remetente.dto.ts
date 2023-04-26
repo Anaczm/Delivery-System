@@ -1,5 +1,4 @@
-import { IsNotEmpty, IsString, IsPhoneNumber, IsPostalCode, Validate} from "class-validator";
-import { cpf }from "cpf-cnpj-validator"
+import { IsNotEmpty, IsString, IsPhoneNumber, IsPostalCode, Length} from "class-validator";
 
 export class RemetenteDto {
     @IsNotEmpty()
@@ -12,9 +11,7 @@ export class RemetenteDto {
 
     @IsNotEmpty()
     @IsString()
-    @Validate((valor) => cpf.isValid(valor), {
-        message: 'CPF inválido',
-    })
+    @Length(11) 
     str_CPF: string;
     
     @IsNotEmpty()
