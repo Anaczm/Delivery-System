@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -12,7 +9,7 @@ datasource db {
 
 model Remetente {
   id            Int    @id @default(autoincrement())
-  id_objeto     Objeto[]
+  id_objeto     Objeto[] 
   str_nome      String @db.VarChar(70)
   str_telefone  String @db.VarChar(20)
   str_CPF       String @unique @db.Char(11)
@@ -20,7 +17,7 @@ model Remetente {
   str_cidade    String @db.VarChar(30)
   str_bairro    String @db.VarChar(40)
   str_numero    String @db.VarChar(6)
-  str_CEP       String @db.Char(8)
+  str_CEP       String @db.Char(9)
 }
 
 model Destinatario {
