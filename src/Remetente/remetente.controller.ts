@@ -8,7 +8,7 @@ export class RemetenteController {
 
     @Post('cadastro')
     cadastro(@Body() dto: RemetenteDto) {
-        return this.remetenteService.cadastro()
+        return this.remetenteService.cadastro(dto);
     }
 } 
 
