@@ -1,14 +1,14 @@
-# Sistema de Entregas :truck:
-Este é um projeto em desenvolvimento que tem como objetivo fornecer um sistema de gerenciamento de entregas de alta qualidade para usuários (clientes e empresas). O sistema permitirá que os usuários acompanhem seus envios e entregas através de rastreamento, bem como possam cancelar entregas, garantindo uma experiência mais satisfatória.
+# Delivery System :truck:
+This is a project under development aimed at providing a high-quality delivery management system for users (custumers and companies). The system will allow users to track your shipments and deliveries, as well as cancel deliveries, ensuring a more complete experience!
 
-### Fluxos
-Para facilitar o entendimento dos processos de entrega de forma geral, bem como de cancelamento e consulta de entregas, foram criados diagramas que podem ser acessados através do seguinte link: https://excalidraw.com/#json=4n-lADu8LI4rU5Im_9-D4,KJ3SABZMjN5qu1FvI8DfKg
+### Flows
+To facilitate the understanding of the delivery processes in general, as well as cancellation and delivery queries, diagrams have been created that can be accessed through the following link: https://excalidraw.com/#json=4n-lADu8LI4rU5Im_9-D4,KJ3SABZMjN5qu1FvI8DfKg
 
-### Tecnologias utilizadas
-O projeto está sendo desenvolvido utilizando as seguintes tecnologias:
-- `TypeScript:` linguagem de programação que adiciona recursos ao JavaScript, tornando o código mais seguro e fácil de manter;
-- `NestJS:` framework em TypeScript que ajuda a criar aplicativos escaláveis e testáveis de forma fácil;
-- `PrismaORM:` ORM (Object-Relational Mapping) para bancos de dados relacionais que simplifica a comunicação com o banco de dados e torna as consultas mais eficientes;
-- `MySQL:` banco de dados relacional utilizado para armazenar informações relacionadas às entregas.
+### Techonologies used
+The project is being developed using the following technologies:
+- `TypeScript:` a programming language that adds features to JavaScript, making the code more secure and easier to maintain;
+- `NestJS:` a TypeScript framework that helps create scalable and easily testable applications;
+- `PrismaORM:` an ORM (Object-Relational Mapping) for relational databases that simplifies communication with the database and makes queries more efficient;
+- `MySQL:` a relational database used to store information related to deliveries.
 
-Essas tecnologias garantem o desenvolvimento do projeto com as melhores práticas, garantindo a qualidade do código e tornando o sistema mais fácil de ser mantido e escalado.</p>
+These technologies ensure the development of the project with best practices, guaranteeing code quality and making the system easier to maintain and scale.
