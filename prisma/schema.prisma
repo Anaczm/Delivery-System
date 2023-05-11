@@ -7,51 +7,58 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Remetente {
-  id            Int    @id @default(autoincrement())
-  id_objeto     Objeto[] 
-  str_nome      String @db.VarChar(70)
-  str_telefone  String @db.VarChar(20)
-  str_CPF       String @unique @db.Char(11)
-  str_estado    String @db.VarChar(20)
-  str_cidade    String @db.VarChar(30)
-  str_bairro    String @db.VarChar(40)
-  str_numero    String @db.VarChar(6)
-  str_CEP       String @db.Char(9)
+model Sender {
+  id              Int    @id @default(autoincrement())
+  id_object       Object[] 
+  str_name        String @db.VarChar(70)
+  str_phone       String @db.VarChar(20)
+  str_CPF         String @unique @db.Char(11)
+  str_state       String @db.VarChar(20)
+  str_city        String @db.VarChar(30)
+  str_neiborhood  String @db.VarChar(40)
+  str_number      String @db.VarChar(6)
+  str_CEP         String @db.Char(9)
+
+  @@map("Senders")
 }
 
-model Destinatario {
-  id            Int    @id @default(autoincrement())
-  id_objeto     Objeto[]
-  str_nome      String @db.VarChar(70)
-  str_telefone  String @db.VarChar(20)
-  str_CPF       String @unique @db.Char(11)
-  str_estado    String @db.VarChar(20)
-  str_cidade    String @db.VarChar(30)
-  str_bairro    String @db.VarChar(40)
-  str_numero    String @db.VarChar(6)
-  str_CEP       String @db.Char(8)
+model Recipient {
+  id              Int    @id @default(autoincrement())
+  id_object       Object[] 
+  str_name        String @db.VarChar(70)
+  str_phone       String @db.VarChar(20)
+  str_CPF         String @unique @db.Char(11)
+  str_state       String @db.VarChar(20)
+  str_city        String @db.VarChar(30)
+  str_neiborhood  String @db.VarChar(40)
+  str_number      String @db.VarChar(6)
+  str_CEP         String @db.Char(9)
+
+  @@map("Recipients")
 }
 
-model Objeto {
-  id                  Int    @id @default(autoincrement())
-  str_peso            String @db.VarChar(10)
-  str_dimensoes       String @db.VarChar(10)
-  str_tipoServico     String @db.VarChar(20)
-  str_codRastreio     String @db.VarChar(20)
-  str_remetente       Remetente @relation(fields: [id_remetente], references: [id])
-  id_remetente        Int
-  str_destinatario    Destinatario @relation(fields: [id_destinatario], references: [id])
-  id_destinatario     Int
-  str_objlog          ObjetoLog @relation(fields: [id_objLog], references: [id])
-  id_objLog           Int
+model Object {
+  id               Int    @id @default(autoincrement())
+  str_weight       String @db.VarChar(10)
+  str_dimensions   String @db.VarChar(10)
+  str_serviceType  String @db.VarChar(20)
+  str_TrackingCod  String @db.VarChar(20)
+  str_sender       Sender @relation(fields: [id_sender], references: [id])
+  id_sender        Int
+  str_recipient    Recipient @relation(fields: [id_recipient], references: [id])
+  id_recipient     Int
+  str_logObj       LogObject @relation(fields: [id_logObj], references: [id])
+  id_logObj        Int
 
+  @@map("Objects")
 }
 
-model ObjetoLog {
-  id            Int    @id @default(autoincrement())
-  id_objeto     Objeto[]
-  str_status    String @db.VarChar(50)
-  dt_registro   DateTime @default(now())
-  str_descricao String @db.Text
+model LogObject {
+  id                Int    @id @default(autoincrement())
+  id_object         Object[]
+  str_status        String @db.VarChar(50)
+  dt_register       DateTime @default(now())
+  str_descripition  String @db.Text
+
+  @@map("LogObjects")
 }
