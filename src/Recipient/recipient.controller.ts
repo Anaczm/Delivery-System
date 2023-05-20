@@ -6,7 +6,7 @@ import { RecipientDto } from './dto';
 export class RecipientController {
     constructor (private recipientService: RecipientService) {}
 
-    @Post('register')
+    @Post('register-recipient')
     register(@Body() dto: RecipientDto) {
         return this.recipientService.register(dto);
     }
