@@ -1,7 +1,7 @@
 import { ForbiddenException, Injectable } from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 import { SenderDto } from "./dto";
-import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 
 @Injectable()
     export class SenderService {
@@ -32,7 +32,7 @@ import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
                 if (error instanceof PrismaClientKnownRequestError) {
                     if (error.code === 'P2002') {
                         throw new ForbiddenException(
-                            'Credentials taken',
+                            'Credenciais únicas duplicadas',
                         );
                     }
                 }
