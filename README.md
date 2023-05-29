@@ -1,5 +1,5 @@
 # Delivery System :truck:
-This is a project under development aimed at providing a high-quality delivery management system for users (custumers and companies). The system will allow users to track your shipments and deliveries, as well as cancel deliveries, ensuring a more complete experience!
+This is a project under development aimed at providing a high-quality delivery management system for users (custumers and companies). The system will allow users to track your shipments and deliveries.
 
 ### Flows
 To facilitate the understanding of the delivery processes in general, as well as cancellation and delivery queries, diagrams have been created that can be accessed through the following link: https://excalidraw.com/#json=4n-lADu8LI4rU5Im_9-D4,KJ3SABZMjN5qu1FvI8DfKg
